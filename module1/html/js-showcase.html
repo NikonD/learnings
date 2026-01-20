@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS — витрина приёмов (Модуль 1)</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+    body { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; }
+    button { padding: 10px 12px; cursor: pointer; }
+    #box { padding: 12px; border: 1px solid #ddd; border-radius: 10px; }
+    #log { margin-top: 12px; padding: 12px; background: #111; color: #ddd; border-radius: 10px; min-height: 80px; }
+    body.is-dark { background: #0f172a; color: #e2e8f0; }
+    body.is-dark #box { border-color: #334155; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 16px; }
+    .topnav a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="topnav" role="navigation" aria-label="Навигация модуля 1">
+    <strong>Модуль 1:</strong>
+    <a href="./index.html">Главная</a>
+    <a href="./tags-showcase.html">HTML теги</a>
+    <a href="./forms-httpbin.html">Forms + httpbin</a>
+    <a href="./css-showcase.html">CSS</a>
+    <a href="./js-basics-cheatsheet.html">JS база</a>
+    <a href="./js-basics.html">JS база (интерактивно)</a>
+    <a href="./js-showcase.html">JS DOM</a>
+  </div>
+
+  <h1 id="title">JS — витрина приёмов</h1>
+  <p>Откройте консоль DevTools (F12 → Console), чтобы видеть логи и ошибки.</p>
+
+  <div class="row">
+    <button id="btn" type="button">Кликни</button>
+    <button id="toggle" type="button">Toggle dark</button>
+  </div>
+
+  <div id="box" data-id="123">
+    Элемент с <code>data-id</code>. JS читает это через <code>element.dataset</code>.
+  </div>
+
+  <div id="log"></div>
+
+  <p>
+    Назад к навигации: <a href="./index.html">module1/html/index.html</a>
+  </p>
+
+  <script src="../js/js-showcase.js"></script>
+</body>
+</html>
+
+

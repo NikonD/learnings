@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Формы + httpbin — Модуль 1</title>
+  <!-- Минимальные стили только чтобы не было каши (не урок CSS) -->
+  <style>
+    :root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+    body { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 16px; }
+    .topnav a { text-decoration: none; }
+    section { margin: 18px 0; padding: 14px; border: 1px solid #ddd; border-radius: 10px; }
+    label { font-weight: 600; }
+    input, select, textarea, button { width: 100%; padding: 10px 12px; margin-top: 6px; }
+    .row { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+    .muted { color: #555; }
+    pre { white-space: pre-wrap; background: #111; color: #ddd; padding: 12px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="topnav" role="navigation" aria-label="Навигация модуля 1">
+    <strong>Модуль 1:</strong>
+    <a href="./index.html">Главная</a>
+    <a href="./tags-showcase.html">HTML теги</a>
+    <a href="./forms-httpbin.html">Forms + httpbin</a>
+    <a href="./css-showcase.html">CSS</a>
+    <a href="./js-basics-cheatsheet.html">JS база</a>
+    <a href="./js-basics.html">JS база (интерактивно)</a>
+    <a href="./js-showcase.html">JS DOM</a>
+  </div>
+
+  <h1>Формы + httpbin (эхо-сервер)</h1>
+  <p class="muted">
+    Используем: <code>https://httpbin.org/get</code> и <code>https://httpbin.org/post</code>.
+    В ответе смотрите поля <code>args</code> (GET) и <code>form</code> (POST).
+  </p>
+
+  <section>
+    <h2>1) GET без JS (параметры уходят в URL)</h2>
+    <form action="https://httpbin.org/get" method="get" target="_blank">
+      <label for="q">Поиск</label>
+      <input id="q" name="q" type="text" placeholder="например: hello" />
+      <button type="submit">Отправить GET</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>2) POST без JS (страница перезагрузится)</h2>
+    <form action="https://httpbin.org/post" method="post" target="_blank">
+      <div class="row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="age">Возраст</label>
+          <input id="age" name="age" type="number" min="1" max="120" />
+        </div>
+      </div>
+
+      <label for="about">О себе</label>
+      <textarea id="about" name="about" rows="3"></textarea>
+
+      <button type="submit">Отправить POST</button>
+      <p class="muted">Откройте DevTools → Network → запрос → Payload/Response.</p>
+    </form>
+  </section>
+
+  <section>
+    <h2>3) POST через JS (fetch, без перезагрузки)</h2>
+    <form id="js-form">
+      <label for="name">Имя</label>
+      <input id="name" name="name" required />
+
+      <label for="city">Город</label>
+      <input id="city" name="city" placeholder="Москва" />
+
+      <button type="submit">Отправить через fetch</button>
+    </form>
+    <p id="status" class="muted"></p>
+    <pre id="output">{}</pre>
+  </section>
+
+  <p class="muted">
+    Назад к тегам: <a href="./tags-showcase.html">tags-showcase.html</a>
+  </p>
+
+  <script src="../js/forms-httpbin.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS — витрина приёмов (Модуль 1)</title>
+  <link rel="stylesheet" href="../css/css-showcase.css" />
+</head>
+<body>
+  <div class="topnav" role="navigation" aria-label="Навигация модуля 1">
+    <strong>Модуль 1:</strong>
+    <a href="./index.html">Главная</a>
+    <a href="./tags-showcase.html">HTML теги</a>
+    <a href="./forms-httpbin.html">Forms + httpbin</a>
+    <a href="./css-showcase.html">CSS</a>
+    <a href="./js-basics-cheatsheet.html">JS база</a>
+    <a href="./js-basics.html">JS база (интерактивно)</a>
+    <a href="./js-showcase.html">JS DOM</a>
+  </div>
+
+  <h1>CSS — витрина “всё базовое, но понятно”</h1>
+  <p class="muted">Стили берутся из <code>module1/css/css-showcase.css</code>. Открывайте DevTools и смотрите, какие классы стоят на элементах.</p>
+
+  <nav class="card">
+    <strong>Разделы:</strong>
+    <ul class="nav">
+      <li><a href="#sizes">Размеры</a></li>
+      <li><a href="#colors">Цвет и фон</a></li>
+      <li><a href="#text">Текст</a></li>
+      <li><a href="#spacing">Отступы (margin vs padding)</a></li>
+      <li><a href="#tables">Таблицы</a></li>
+      <li><a href="#selectors">Селекторы</a></li>
+      <li><a href="#layout">Layout (flex/grid)</a></li>
+    </ul>
+  </nav>
+
+  <section id="sizes" class="card">
+    <h2>1) Размеры: width/height/min/max</h2>
+    <p class="muted">Смотри классы <code>.demo-size-*</code>. Важно: <code>max-width: 100%</code> часто спасает на мобильных.</p>
+    <div class="grid">
+      <div class="card">
+        <p><strong>Фиксированные</strong>: px</p>
+        <div class="demo-box demo-size-fixed">width: 240px; height: 64px</div>
+      </div>
+      <div class="card">
+        <p><strong>Проценты</strong>: % от родителя</p>
+        <div class="demo-box demo-size-percent">width: 70%</div>
+      </div>
+      <div class="card">
+        <p><strong>Ограничения</strong>: min/max</p>
+        <div class="demo-box demo-size-minmax">min-width / max-width</div>
+      </div>
+      <div class="card">
+        <p><strong>Высота</strong>: min-height</p>
+        <div class="demo-box demo-size-minheight">min-height: 90px</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="colors" class="card">
+    <h2>2) Цвет и фон: color, background</h2>
+    <div class="grid">
+      <div class="card demo-bg-solid">
+        <p class="demo-text-accent"><strong>color</strong> — цвет текста</p>
+        <p class="muted"><strong>background-color</strong> — фон элемента</p>
+      </div>
+      <div class="card demo-bg-gradient">
+        <p><strong>background</strong> может быть градиентом</p>
+        <p class="muted">linear-gradient(...)</p>
+      </div>
+      <div class="card demo-bg-image">
+        <p><strong>background-image</strong> + size/position</p>
+        <p class="muted">Шахматный фон (без картинок из интернета)</p>
+      </div>
+      <div class="card">
+        <p><strong>Прозрачность</strong>: opacity</p>
+        <div class="demo-box demo-opacity">opacity: 0.7</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="text" class="card">
+    <h2>3) Текст: font-size, font-weight, line-height, text-align</h2>
+    <div class="grid">
+      <div class="card">
+        <p class="demo-text-size"><strong>font-size</strong>: 22px</p>
+        <p class="demo-text-weight"><strong>font-weight</strong>: 800</p>
+        <p class="demo-text-line"><strong>line-height</strong>: 2</p>
+      </div>
+      <div class="card demo-text-center">
+        <p><strong>text-align</strong>: center</p>
+        <p class="muted">Выравнивает текст внутри блока</p>
+      </div>
+      <div class="card">
+        <p class="demo-text-decor"><strong>text-decoration</strong>: underline</p>
+        <p class="muted">Часто для ссылок/подчёркивания</p>
+      </div>
+      <div class="card">
+        <p class="demo-text-transform"><strong>text-transform</strong>: uppercase</p>
+        <p class="muted">Превращает текст в верхний регистр</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="spacing" class="card">
+    <h2>4) Отступы: margin vs padding</h2>
+    <p class="muted">
+      <strong>margin</strong> — снаружи (отталкивает другие блоки). <strong>padding</strong> — внутри (расстояние от границы до контента).
+    </p>
+    <div class="grid">
+      <div class="card">
+        <p><strong>padding</strong> (внутренний)</p>
+        <div class="demo-box demo-padding">
+          Внутри больше воздуха
+        </div>
+      </div>
+      <div class="card">
+        <p><strong>margin</strong> (внешний)</p>
+        <div class="demo-box demo-margin">Я отступаю сверху/снизу</div>
+        <div class="demo-box">Соседний блок</div>
+      </div>
+      <div class="card">
+        <p><strong>border</strong> + <strong>border-radius</strong></p>
+        <div class="demo-box demo-border-round">Рамка и скругление</div>
+      </div>
+      <div class="card">
+        <p><strong>box-shadow</strong> + <strong>transition</strong></p>
+        <div class="demo-box demo-hover">Наведи мышкой</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tables" class="card">
+    <h2>5) Таблицы: варианты оформления</h2>
+    <p class="muted">Одна и та же таблица, но разные классы = разные стили.</p>
+
+    <h3>5.1 Базовая + границы</h3>
+    <table class="tbl tbl-borders">
+      <caption>Студенты</caption>
+      <thead>
+        <tr><th>Имя</th><th>Группа</th><th>Баллы</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Аня</td><td>A</td><td>95</td></tr>
+        <tr><td>Илья</td><td>B</td><td>88</td></tr>
+        <tr><td>Даша</td><td>A</td><td>91</td></tr>
+      </tbody>
+    </table>
+
+    <h3>5.2 Полосатая (zebra) + hover строки</h3>
+    <table class="tbl tbl-striped tbl-hover">
+      <thead>
+        <tr><th>Товар</th><th>Цена</th><th>Склад</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Кофе</td><td>300</td><td>12</td></tr>
+        <tr><td>Чай</td><td>180</td><td>30</td></tr>
+        <tr><td>Какао</td><td>220</td><td>8</td></tr>
+      </tbody>
+    </table>
+
+    <h3>5.3 Компактная</h3>
+    <table class="tbl tbl-borders tbl-compact">
+      <thead>
+        <tr><th>Параметр</th><th>Значение</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>width</td><td>ширина</td></tr>
+        <tr><td>padding</td><td>внутренний отступ</td></tr>
+        <tr><td>margin</td><td>внешний отступ</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="selectors" class="card">
+    <h2>6) Селекторы: как выбирать элементы</h2>
+    <p class="muted">Смотри правила в CSS в блоке “SELECTORS DEMO”.</p>
+
+    <div class="card">
+      <p class="note">.note — селектор по классу</p>
+      <p id="special">#special — селектор по id</p>
+      <p data-kind="warning">[data-kind="warning"] — селектор по атрибуту</p>
+
+      <div class="parent">
+        <p class="child">.parent .child — вложенность (descendant)</p>
+        <p class="child direct">.parent > .direct — прямой ребёнок (child)</p>
+        <p class="a">.a + .b — сосед справа (adjacent sibling)</p>
+        <p class="b">Я выделюсь через .a + .b</p>
+      </div>
+
+      <label>input[type="text"] (атрибут): <input type="text" placeholder="текст" /></label>
+      <label>input:focus (псевдокласс): <input type="text" placeholder="кликни" /></label>
+      <p class="tag">.tag::before (псевдоэлемент)</p>
+      <ul class="list">
+        <li>li:first-child</li>
+        <li>li:last-child</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="important" class="card">
+    <h2>Селекторы</h2>
+    <p>Класс: <span class="tag">muted</span>, id: <code>#important</code>.</p>
+    <p>Ссылка с hover: <a href="https://example.com" target="_blank" rel="noopener">example.com</a></p>
+  </section>
+
+  <section id="layout" class="row">
+    <div class="card">
+      <h2>Flexbox (row)</h2>
+      <p class="muted">Карточки в одной строке, переносятся при узком экране.</p>
+    </div>
+    <div class="card">
+      <h2>Фокус в форме</h2>
+      <label>Поле: <input placeholder="кликни сюда" /></label>
+      <p class="muted">Смотри <code>input:focus</code> в CSS.</p>
+    </div>
+    <div class="card">
+      <h2>Кнопка</h2>
+      <button type="button">Нажми</button>
+      <p class="muted">Смотри <code>button:hover</code>/<code>button:active</code>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Grid (сеткой)</h2>
+    <div class="grid">
+      <div class="card"><strong>1</strong> — auto-fit</div>
+      <div class="card"><strong>2</strong> — minmax</div>
+      <div class="card"><strong>3</strong> — gap</div>
+      <div class="card"><strong>4</strong> — удобно для карточек</div>
+    </div>
+  </section>
+
+  <p class="muted">
+    Назад к тегам: <a href="./tags-showcase.html">tags-showcase.html</a>
+  </p>
+</body>
+</html>
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS базово — интерактивно</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+    body { max-width: 1000px; margin: 0 auto; padding: 24px 16px 60px; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    section { border: 1px solid #ddd; border-radius: 12px; padding: 14px; margin: 16px 0; }
+    .muted { color: #555; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    button { padding: 10px 12px; cursor: pointer; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 6px; }
+    pre { white-space: pre-wrap; background: #111; color: #ddd; padding: 12px; border-radius: 10px; min-height: 120px; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 16px; }
+    .topnav a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="topnav" role="navigation" aria-label="Навигация модуля 1">
+    <strong>Модуль 1:</strong>
+    <a href="./index.html">Главная</a>
+    <a href="./tags-showcase.html">HTML теги</a>
+    <a href="./forms-httpbin.html">Forms + httpbin</a>
+    <a href="./css-showcase.html">CSS</a>
+    <a href="./js-basics-cheatsheet.html">JS база</a>
+    <a href="./js-basics.html">JS база (интерактивно)</a>
+    <a href="./js-showcase.html">JS DOM</a>
+  </div>
+
+  <h1>JavaScript — база (интерактивно)</h1>
+  <p class="muted">
+    Если хочется “просто прочитать” — смотри <a href="./js-basics-cheatsheet.html">простую шпаргалку</a>.
+    Здесь — кнопки, вывод и демонстрации.
+  </p>
+
+  <section>
+    <h2>Код и вывод</h2>
+    <div class="row">
+      <button id="btn-clear" type="button">Очистить</button>
+      <button id="btn-all" type="button">Все примеры</button>
+    </div>
+    <p class="muted">Нажми кнопку раздела — слева появится код, справа появится вывод.</p>
+    <div class="row" style="align-items: stretch;">
+      <div style="flex: 1 1 420px;">
+        <h3>Код (что запускаем)</h3>
+        <pre id="code"></pre>
+      </div>
+      <div style="flex: 1 1 420px;">
+        <h3>Вывод (что получилось)</h3>
+        <pre id="out"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Разделы</h2>
+    <div class="row">
+      <button id="btn-vars" type="button">Переменные</button>
+      <button id="btn-conditions" type="button">Условия</button>
+      <button id="btn-loops" type="button">Циклы</button>
+      <button id="btn-arrays" type="button">Массивы</button>
+      <button id="btn-functions" type="button">Функции</button>
+      <button id="btn-json" type="button">Объекты/JSON</button>
+    </div>
+    <p class="muted">
+      Подсказка: во время урока удобно держать открытым DevTools: <strong>F12 → Console</strong>.
+      Но здесь мы специально выводим всё на страницу, чтобы было видно “код → результат”.
+    </p>
+  </section>
+
+  <p class="muted">
+    Назад к навигации: <a href="./index.html">module1/html/index.html</a>
+  </p>
+
+  <script src="../js/js-basics-demo.js"></script>
+</body>
+</html>
+
+

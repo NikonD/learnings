@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Шпаргалка тегов — Модуль 1</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+    body { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 16px; }
+    .topnav a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <!--
+    Цель этого файла: показать РАЗНЫЕ HTML-теги и популярные атрибуты.
+    Формы здесь — только "скелет". Подробная практика форм вынесена в отдельный файл:
+    ./forms-httpbin.html
+  -->
+
+  <div class="topnav" role="navigation" aria-label="Навигация модуля 1">
+    <strong>Модуль 1:</strong>
+    <a href="./index.html">Главная</a>
+    <a href="./tags-showcase.html">HTML теги</a>
+    <a href="./forms-httpbin.html">Forms + httpbin</a>
+    <a href="./css-showcase.html">CSS</a>
+    <a href="./js-basics-cheatsheet.html">JS база</a>
+    <a href="./js-basics.html">JS база (интерактивно)</a>
+    <a href="./js-showcase.html">JS DOM</a>
+  </div>
+
+  <h1>HTML — витрина тегов (Модуль 1)</h1>
+  <p>Здесь много маленьких примеров. Смотрите: как выглядит в браузере и как это пишется в коде.</p>
+
+  <hr />
+
+  <section id="page-structure">
+    <h2>1) Семантическая структура страницы</h2>
+    <p>Эти теги помогают читать страницу людям и поисковикам (и помогают со стилями).</p>
+
+    <!-- Рендер-скелет -->
+    <header>header: шапка</header>
+    <nav>nav: меню</nav>
+    <main>
+      <section>
+        <h3>section: секция</h3>
+        <article>
+          <h4>article: статья/пост</h4>
+          <p>Текст статьи...</p>
+        </article>
+      </section>
+      <aside>aside: боковая колонка</aside>
+    </main>
+    <footer>footer: подвал</footer>
+
+    <p><strong>Код:</strong></p>
+    <pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;article&gt;...&lt;/article&gt;
+  &lt;/section&gt;
+  &lt;aside&gt;...&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+  </section>
+
+  <section id="text-tags">
+    <h2>2) Текст и форматирование</h2>
+    <h3>Заголовок h3</h3>
+    <p>
+      Параграф <code>&lt;p&gt;</code>.
+      <strong>strong</strong>,
+      <em>em</em>,
+      <small>small</small>,
+      <mark>mark</mark>,
+      <span>span</span>,
+      x<sup>2</sup>,
+      H<sub>2</sub>O.
+    </p>
+    <p>Перенос строки: строка 1<br />строка 2</p>
+    <p><strong>Код:</strong></p>
+    <pre><code>&lt;p&gt;
+  &lt;strong&gt;strong&lt;/strong&gt;
+  &lt;em&gt;em&lt;/em&gt;
+  &lt;small&gt;small&lt;/small&gt;
+  &lt;mark&gt;mark&lt;/mark&gt;
+  x&lt;sup&gt;2&lt;/sup&gt;
+  H&lt;sub&gt;2&lt;/sub&gt;O
+  &lt;br /&gt;
+&lt;/p&gt;</code></pre>
+  </section>
+
+  <section id="lists">
+    <h2>3) Списки</h2>
+    <h3>Маркированный</h3>
+    <ul>
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+    </ul>
+
+    <h3>Нумерованный</h3>
+    <ol>
+      <li>Шаг 1</li>
+      <li>Шаг 2</li>
+    </ol>
+
+    <h3>Список определений</h3>
+    <dl>
+      <dt>HTML</dt>
+      <dd>Язык разметки</dd>
+      <dt>CSS</dt>
+      <dd>Стили</dd>
+    </dl>
+  </section>
+
+  <section id="links">
+    <h2>4) Ссылки</h2>
+    <p>
+      Обычная ссылка:
+      <a href="https://example.com" target="_blank" rel="noopener">example.com</a>
+    </p>
+    <p>
+      Email:
+      <a href="mailto:test@example.com">mailto:test@example.com</a>
+    </p>
+    <p>
+      Телефон:
+      <a href="tel:+79990001122">tel:+79990001122</a>
+    </p>
+    <p><strong>Атрибуты:</strong> <code>href</code>, <code>target</code>, <code>rel</code>, <code>download</code>.</p>
+  </section>
+
+  <section id="images">
+    <h2>5) Изображения</h2>
+    <!-- Здесь src пустой, чтобы файл не зависел от интернета. В реальном проекте укажите путь. -->
+    <figure>
+      <img src="" alt="Описание картинки (alt обязателен)" width="200" height="120" />
+      <figcaption>figure + figcaption: подпись к изображению</figcaption>
+    </figure>
+    <p><strong>Атрибуты:</strong> <code>src</code>, <code>alt</code>, <code>width</code>/<code>height</code>, <code>loading="lazy"</code>.</p>
+  </section>
+
+  <section id="tables">
+    <h2>6) Таблицы</h2>
+    <table border="1">
+      <caption>Пример таблицы</caption>
+      <thead>
+        <tr>
+          <th scope="col">Имя</th>
+          <th scope="col">Баллы</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Аня</td>
+          <td>95</td>
+        </tr>
+        <tr>
+          <td>Илья</td>
+          <td>88</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Теги:</strong> <code>table</code>, <code>caption</code>, <code>thead</code>, <code>tbody</code>, <code>tr</code>, <code>th</code>, <code>td</code>.</p>
+  </section>
+
+  <section id="interactive">
+    <h2>7) Интерактивные теги (без JS)</h2>
+    <details>
+      <summary>Нажми меня (details/summary)</summary>
+      <p>Содержимое раскрывается без JavaScript.</p>
+    </details>
+  </section>
+
+  <section id="common-attrs">
+    <h2>8) Общие атрибуты (важные)</h2>
+    <ul>
+      <li><code>id</code> — уникальный идентификатор (для CSS/JS/label-for).</li>
+      <li><code>class</code> — классы для CSS/JS (можно несколько через пробел).</li>
+      <li><code>style</code> — инлайн-стиль (быстро, но лучше выносить в CSS).</li>
+      <li><code>title</code> — подсказка при наведении.</li>
+      <li><code>hidden</code> — скрыть элемент.</li>
+      <li><code>data-*</code> — свои данные (например, <code>data-id="123"</code>).</li>
+      <li><code>aria-*</code> — доступность (например, <code>aria-label</code>).</li>
+    </ul>
+  </section>
+
+  <section id="forms-short">
+    <h2>9) Формы — только скелет</h2>
+    <p>
+      Подробно и с httpbin: <a href="./forms-httpbin.html">forms-httpbin.html</a>
+    </p>
+
+    <!-- Скелет формы: минимум, чтобы понять структуру -->
+    <form action="https://httpbin.org/post" method="post">
+      <label for="name">Имя</label>
+      <input id="name" name="name" type="text" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+
+      <button type="submit">Отправить</button>
+    </form>
+
+    <p><strong>Важно:</strong> без <code>name</code> поле не попадёт на сервер.</p>
+  </section>
+</body>
+</html>
+
