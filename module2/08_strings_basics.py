@@ -42,3 +42,33 @@ print("after strip:", s2.strip())
 # user = input("Введите текст: ")
 # print("normalized:", user.strip().lower())
 
+
+
+# Срезы строк (slices)
+# Срез позволяет получить часть строки.
+# Формат: строка[start : end : step]
+
+text = "Python"
+
+# Получить подстроку с индекса start до end (end не включается)
+print("text[0:3] =", text[0:3])   # 'Pyt'
+print("text[2:5] =", text[2:5])   # 'tho'
+
+# Если start не указан — берется с начала строки
+print("text[:4] =", text[:4])     # 'Pyth'
+
+# Если end не указан — берется до конца строки
+print("text[3:] =", text[3:])     # 'hon'
+
+# Срез всей строки
+print("text[:] =", text[:])       # 'Python'
+
+# Шаг (step)
+print("text[::2] =", text[::2])   # 'Pto'
+print("text[1::2] =", text[1::2]) # 'yhn'
+
+# Отрицательный шаг — строка в обратном порядке
+print("text[::-1] =", text[::-1]) # 'nohtyP'
+
+print()
+
