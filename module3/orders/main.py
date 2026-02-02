@@ -4,13 +4,15 @@ def menu():
     print(f"1. add\n2. remove\n3. search\n4. show\n5. exit")
 
 if __name__ == "__main__":
-    controller = OrderController()
-    is_run = True   
+    try:
+        controller = OrderController()
+        is_run = True   
 
-    while(is_run):
+        while(is_run):
 
-        menu()
+            menu()
 
-        is_run = controller.choose(int(input(">")))
-
+            is_run = controller.choose(int(input(">")))
+    except KeyboardInterrupt: # нормальное завершение работы консольной программы
+        print("Завершение работы")
 

@@ -10,7 +10,8 @@ class OrderController():
         self._typeAction = action
 
         match(action):
-            case 1: self.addOrder()
+            case 1: 
+                return self.addOrder()
             case 2: self.removeOrder()
             case 3: self.searchOrder()
             case 4: self.showOrders()
@@ -24,12 +25,19 @@ class OrderController():
             print(order)
 
     def addOrder(self):
-
+        
+        cost = None
         name = input("Name: ")
-        cost = int(input("Cost: "))
-        typeName = input("Type: ")
+        
+        try:
+            cost = int(input("Cost: "))
+            typeName = input("Type: ")
 
-        self._orders.append(Order(name, cost, typeName))
+            self._orders.append(Order(name, cost, typeName))
+        except ValueError:
+            print("Ожидалось число")
+        
+        return True
 
     def removeOrder(self):
         # удаление по имени(Name)
