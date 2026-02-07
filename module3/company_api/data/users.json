@@ -1,0 +1,6 @@
+[
+  {"id": 1, "name": "Иван Петров", "email": "ivan@example.com", "position_ids": [1, 2]},
+  {"id": 2, "name": "Мария Сидорова", "email": "maria@example.com", "position_ids": [3, 4]},
+  {"id": 3, "name": "Алексей Козлов", "email": "alexey@example.com", "position_ids": [5]},
+  {"id": 4, "name": "Елена Новикова", "email": "elena@example.com", "position_ids": [6, 7]}
+]

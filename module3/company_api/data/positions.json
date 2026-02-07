@@ -1,0 +1,9 @@
+[
+  {"id": 1, "title": "Менеджер по продажам", "company_id": 1},
+  {"id": 2, "title": "Логист", "company_id": 1},
+  {"id": 3, "title": "Python-разработчик", "company_id": 2},
+  {"id": 4, "title": "Team Lead", "company_id": 2},
+  {"id": 5, "title": "HR-менеджер", "company_id": 2},
+  {"id": 6, "title": "Продавец-консультант", "company_id": 3},
+  {"id": 7, "title": "Администратор магазина", "company_id": 3}
+]
