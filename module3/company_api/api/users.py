@@ -40,6 +40,13 @@ def list_users_with_positions():
     ]
 
 
+@router.get("/count")
+def users_count():
+    """Количество пользователей."""
+    data = load_json(USERS_FILE, [])
+    return {"count": len(data)}
+
+
 @router.get("/{user_id}", response_model=User)
 def get_user(user_id: int):
     data = load_json(USERS_FILE, [])
