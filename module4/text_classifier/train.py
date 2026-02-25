@@ -172,7 +172,7 @@ def train_semi_supervised_neural_network(X_labeled, y_labeled, X_unlabeled, task
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"   Устройство: {device}")
     
-    # Упрощаем модель для маленького датасета (без LSTM)
+ 
     model = TextClassifier(vocab_size, EMBEDDING_DIM, num_classes, max_len=MAX_LEN).to(device)
     
     print("\nАрхитектура нейронной сети:")
@@ -205,7 +205,7 @@ def train_semi_supervised_neural_network(X_labeled, y_labeled, X_unlabeled, task
     model.train()
     
     best_loss = float('inf')
-    patience = 20  # Увеличили patience для простой модели
+    patience = 20 
     patience_counter = 0
     
     for epoch in range(EPOCHS):

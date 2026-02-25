@@ -13,7 +13,7 @@ EMBEDDING_DIM = 128
 
 
 class TextClassifier(nn.Module):
-    """Нейронная сеть для классификации текста (упрощённая для маленьких данных)"""
+    """Нейронная сеть для классификации текста"""
     def __init__(self, vocab_size, embedding_dim, num_classes, max_len=50):
         super(TextClassifier, self).__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
