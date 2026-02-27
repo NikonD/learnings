@@ -7,7 +7,7 @@ from api.companies import router as companies_router
 from api.positions import router as positions_router
 from api.users import router as users_router
 
-app = FastAPI(title="Company API", description="CRUD компаний, должностей и пользователей")
+app = FastAPI(title="Company API", description="CRUD компаний, должностей и пользователей", doc_url="/docs")
 
 app.include_router(companies_router)
 app.include_router(positions_router)
