@@ -5,3 +5,4 @@
 *.so
 .Python
 **/venv/
+**/node_modules/
