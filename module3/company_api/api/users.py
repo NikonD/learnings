@@ -42,7 +42,6 @@ def list_users_with_positions():
 
 @router.get("/count")
 def users_count():
-    """Количество пользователей."""
     data = load_json(USERS_FILE, [])
     return {"count": len(data)}
 

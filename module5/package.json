@@ -1,0 +1,17 @@
+{
+  "name": "module5-js-ts",
+  "version": "1.0.0",
+  "description": "JavaScript и TypeScript — учебные примеры",
+  "scripts": {
+    "run:js": "node",
+    "run:ts": "npx ts-node",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}
