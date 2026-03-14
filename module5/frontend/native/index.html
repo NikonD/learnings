@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company API — нативный фронт</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Company API</h1>
+    <p class="subtitle">Нативный клиент (HTML, CSS, JS) для учебного бэкенда</p>
+    <p class="api-status" id="apiStatus">Проверка API…</p>
+  </header>
+
+  <nav class="tabs">
+    <button type="button" class="tab active" data-tab="companies">Компании</button>
+    <button type="button" class="tab" data-tab="positions">Должности</button>
+    <button type="button" class="tab" data-tab="users">Пользователи</button>
+  </nav>
+
+  <main>
+    <!-- Компании -->
+    <section id="section-companies" class="panel active">
+      <h2>Компании</h2>
+      <button type="button" class="btn primary" id="btnNewCompany">+ Новая компания</button>
+      <div id="companiesList" class="list"></div>
+      <form id="formCompany" class="form card hidden">
+        <h3 id="formCompanyTitle">Новая компания</h3>
+        <input type="hidden" id="companyId" />
+        <label>Название <input type="text" id="companyName" required /></label>
+        <label>Описание <input type="text" id="companyDescription" /></label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Сохранить</button>
+          <button type="button" class="btn secondary btnCancelCompany">Отмена</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Должности -->
+    <section id="section-positions" class="panel">
+      <h2>Должности</h2>
+      <button type="button" class="btn primary" id="btnNewPosition">+ Новая должность</button>
+      <div id="positionsList" class="list"></div>
+      <form id="formPosition" class="form card hidden">
+        <h3 id="formPositionTitle">Новая должность</h3>
+        <input type="hidden" id="positionId" />
+        <label>Название <input type="text" id="positionTitle" required /></label>
+        <label>Компания (ID) <input type="number" id="positionCompanyId" required min="1" /></label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Сохранить</button>
+          <button type="button" class="btn secondary btnCancelPosition">Отмена</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Пользователи -->
+    <section id="section-users" class="panel">
+      <h2>Пользователи</h2>
+      <button type="button" class="btn primary" id="btnNewUser">+ Новый пользователь</button>
+      <div id="usersList" class="list"></div>
+      <form id="formUser" class="form card hidden">
+        <h3 id="formUserTitle">Новый пользователь</h3>
+        <input type="hidden" id="userId" />
+        <label>Имя <input type="text" id="userName" required /></label>
+        <label>Email <input type="email" id="userEmail" required /></label>
+        <label>ID должностей через запятую <input type="text" id="userPositionIds" placeholder="1, 2" /></label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Сохранить</button>
+          <button type="button" class="btn secondary btnCancelUser">Отмена</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
